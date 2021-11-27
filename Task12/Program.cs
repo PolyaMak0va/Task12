@@ -49,21 +49,31 @@ namespace Task12
         }
         public static double Сoordinates()
         {
-            Console.Write("Введите значение X: ");
-            double x = double.Parse(Console.ReadLine());
-            Console.Write("Введите значение Y: ");
-            double y = double.Parse(Console.ReadLine());
-            H = Math.Sqrt(Math.Pow(x - x0, 2) + Math.Pow(y - y0, 2));
-            if (H > R)
+            try
             {
-                Console.WriteLine("Точка не принадлежит кругу");
-                return H;
+                Console.Write("Введите значение X: ");
+                double x = double.Parse(Console.ReadLine());
+                Console.Write("Введите значение Y: ");
+                double y = double.Parse(Console.ReadLine());
+                H = Math.Sqrt(Math.Pow(x - x0, 2) + Math.Pow(y - y0, 2));
+                if (H > R)
+                {
+                    Console.WriteLine("Точка не принадлежит кругу");
+                    return H;
+                }
+                else
+                {
+                    Console.WriteLine("Точка принадлежит кругу");
+                    return H;
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Console.WriteLine("Точка принадлежит кругу");
+
+                Console.WriteLine(ex.Message);
                 return H;
-            }
+            }    
+
         }
     }
 }
