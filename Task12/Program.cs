@@ -31,9 +31,6 @@ namespace Task12
         static Circle()
         {
             R = 12.983;
-            L = 0;
-            S = 0;
-            H = 0;
             x0 = 0;
             y0 = 0;
         }
@@ -69,11 +66,9 @@ namespace Task12
             }
             catch (FormatException ex)
             {
-
                 Console.WriteLine(ex.Message);
                 return H;
             }    
-
         }
     }
 }
